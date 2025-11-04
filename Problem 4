@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int findMAX(const int a[][100], int n, int m){
+    int mx = 0;
+    for(int i = 0; i < n; i ++)
+        for(int j = 0; j < m; j ++)
+            mx = max(mx, a[i][j]);
+    return mx;
+}
+
+int main(){
+    int n, m;
+    cout << "Enter row and column size: ";
+    cin >> n >> m;
+
+    int a[n][m];
+
+    cout << "Enter array: \n";
+
+    for(int i = 0; i < n; i ++)
+        for(int j = 0; j < m; j ++)
+            cin >> a[i][j];
+
+    cout << "Maximum element " << findMAX(a, n, m) << endl;
+}
