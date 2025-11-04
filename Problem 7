@@ -1,0 +1,20 @@
+// Problem7_symmetric.cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    vector<vector<long long>> a(n, vector<long long>(n));
+    for (int i = 0; i < n; ++i)
+        for (int j = 0; j < n; ++j)
+            cin >> a[i][j];
+    
+    for (int i = 0; i < n; ++i)
+        for (int j = i+1; j < n; ++j)
+            if (a[i][j] != a[j][i]){
+                cout << "The matrix is not symmetric.";
+                return;
+            }
+
+    cout << "The matrix is symmetric.";
+}
