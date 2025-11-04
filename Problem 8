@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    vector<double> v(n);
+    for (int i = 0; i < n; ++i) cin >> v[i];
+
+    double mn = v[0], mx = v[0], sum = 0;
+    for (double x : v) {
+        mn = min(mn, x);
+        mx = max(mx, x);
+        sum += x;
+    }
+
+    cout << "Minimum=" << (long long)mn << '\n';
+    cout << "Maximum=" << (long long)mx << '\n';
+    cout << "Average=" << sum / n << '\n';
+    return 0;
+}
