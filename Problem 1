@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+const int SIZE = 4;
+
+double sumColumn(const double m[][SIZE], int rowSize, int ColumnIndex){
+    double sum = 0;
+    for(int i = 0; i < SIZE; i ++)
+        sum += m[ColumnIndex][i];
+    return sum;
+}
+
+int main(){
+    int n;
+    cout << "Enter row size: ";
+    cin >> n;
+
+    double m[n][SIZE];
+
+    cout << "Enter array: \n";
+
+    for(int i = 0; i < n; i ++)
+        for(int j = 0; j < SIZE; j ++)
+            cin >> m[i][j];
+
+    for(int i = 0; i < n; i ++)
+        cout << "sum of column " << i << "=" << sumColumn(m, n, i) << endl;
+}
